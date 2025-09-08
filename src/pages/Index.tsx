@@ -15,7 +15,7 @@ const Index = () => {
               <Terminal className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-foreground">Python Learning Hub</h1>
+              <h1 className="text-2xl font-bold text-foreground">Code Cadet</h1>
               <p className="text-muted-foreground">Interactive tasks and documentation for beginners</p>
             </div>
           </div>
@@ -26,8 +26,8 @@ const Index = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="grid lg:grid-cols-2 gap-6 h-[calc(100vh-140px)]">
           {/* Tasks Section */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="flex flex-col h-full">
+            <div className="flex items-center gap-2 mb-4 flex-shrink-0">
               <Code2 className="h-5 w-5 text-primary" />
               <h2 className="text-xl font-semibold text-foreground">Practice Tasks</h2>
               <span className="px-2 py-1 bg-primary text-primary-foreground text-xs rounded-full">
@@ -35,7 +35,7 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="overflow-y-auto h-full space-y-6 pr-2 scrollbar-thin">
+            <div className="flex-1 overflow-y-auto space-y-6 pr-2 scrollbar-thin">
               {/* Gruppe die Tasks nach Themen */}
               {["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen"].map((topic) => {
                 const tasksForTopic = pythonTasks.filter((task) => (task as any).topic === topic);
@@ -54,8 +54,8 @@ const Index = () => {
           </div>
 
           {/* Help Section */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="flex flex-col h-full">
+            <div className="flex items-center gap-2 mb-4 flex-shrink-0">
               <Book className="h-5 w-5 text-accent" />
               <h2 className="text-xl font-semibold text-foreground">Python Reference</h2>
               <span className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded-full">
@@ -63,7 +63,7 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="overflow-y-auto h-full space-y-3 pr-2 scrollbar-thin">
+            <div className="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin">
               {pythonHelp.map((help, index) => (
                 <HelpCard key={index} {...help} />
               ))}
