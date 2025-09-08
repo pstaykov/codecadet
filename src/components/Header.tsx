@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function Header() {
-  const { theme, setTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
 
   return (
