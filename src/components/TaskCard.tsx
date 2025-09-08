@@ -56,7 +56,7 @@ export function TaskCard({ id, title, difficulty, description, expectedOutput, h
 
       <div className={cn(
         "overflow-hidden transition-all duration-300 ease-smooth",
-        isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        isExpanded ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
       )}>
         <div className="px-4 pb-4 space-y-4 border-t border-border bg-gradient-subtle">
           <div>

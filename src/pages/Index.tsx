@@ -35,10 +35,21 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="overflow-y-auto h-full space-y-3 pr-2 scrollbar-thin">
-              {pythonTasks.map((task) => (
-                <TaskCard key={task.id} {...task} />
-              ))}
+            <div className="overflow-y-auto h-full space-y-6 pr-2 scrollbar-thin">
+              {/* Gruppe die Tasks nach Themen */}
+              {["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen"].map((topic) => {
+                const tasksForTopic = pythonTasks.filter((task) => (task as any).topic === topic);
+                return (
+                  <div key={topic} className="space-y-3">
+                    <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
+                      Thema: {topic}
+                    </h3>
+                    {tasksForTopic.map((task) => (
+                      <TaskCard key={task.id} {...task} />
+                    ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
 

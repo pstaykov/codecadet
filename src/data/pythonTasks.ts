@@ -1,73 +1,123 @@
 export const pythonTasks = [
+  // Thema: Variablen und Eingabe
   {
     id: 1,
-    title: "Hello World",
+    title: "Hallo Benutzer",
     difficulty: "Easy" as const,
-    description: "Write a program that prints 'Hello, World!' to the console. This is the traditional first program for learning any programming language.",
-    expectedOutput: "Hello, World!",
+    description: "Schreibe ein Programm, das den Benutzer nach seinem Namen fragt und Hallo <Name> ausgibt.",
+    expectedOutput: "Wie heißt du? Anna\nHallo Anna",
     hints: [
-      "Use the print() function",
-      "Remember to put quotes around your text"
-    ]
+      "Verwende die Funktion input()",
+      "Speichere die Eingabe in einer Variablen",
+      "Nutze print(), um Text und Variable auszugeben"
+    ],
+    topic: "Variablen und Eingabe" as const
   },
   {
     id: 2,
-    title: "Simple Calculator",
-    difficulty: "Easy" as const,
-    description: "Create a program that asks the user for two numbers and prints their sum. Use the input() function to get user input and convert strings to integers.",
-    expectedOutput: "Enter first number: 5\nEnter second number: 3\nThe sum is: 8",
+    title: "Name und Alter",
+    difficulty: "Medium" as const,
+    description: "Schreibe ein Programm, das den Benutzer nach Name und Alter fragt und dann eine Nachricht wie Anna ist 20 Jahre alt. ausgibt.",
+    expectedOutput: "Wie heißt du? Anna\nWie alt bist du? 20\nAnna ist 20 Jahre alt.",
     hints: [
-      "Use input() to get user input",
-      "Convert strings to integers with int()",
-      "Use the + operator to add numbers"
-    ]
+      "Verwende zwei Eingaben (name, alter)",
+      "input() gibt immer einen String zurück",
+      "Kombiniere die Variablen im print()"
+    ],
+    topic: "Variablen und Eingabe" as const
   },
   {
     id: 3,
-    title: "Even or Odd",
-    difficulty: "Easy" as const,
-    description: "Write a program that asks for a number and tells whether it's even or odd. Use the modulo operator (%) to check if a number is divisible by 2.",
-    expectedOutput: "Enter a number: 4\n4 is even",
+    title: "100 Jahre alt",
+    difficulty: "Hard" as const,
+    description: "Schreibe ein Programm, das den Benutzer nach Name und Alter fragt und berechnet, in welchem Jahr die Person 100 Jahre alt wird.",
+    expectedOutput: "Wie heißt du? Anna\nWie alt bist du? 20\nAnna wird im Jahr 2105 hundert Jahre alt.",
     hints: [
-      "Use the modulo operator (%) to find remainder",
-      "If number % 2 == 0, it's even",
-      "Use if-else statements for conditional logic"
-    ]
+      "Wandle das Alter mit int() in eine Zahl um",
+      "Hole das aktuelle Jahr mit dem Modul datetime",
+      "Addiere (100 - alter) zum aktuellen Jahr"
+    ],
+    topic: "Variablen und Eingabe" as const
   },
+  
+  // Thema: Bedingungen (if-else)
   {
     id: 4,
-    title: "Count to Ten",
-    difficulty: "Medium" as const,
-    description: "Create a program that prints numbers from 1 to 10 using a for loop. Each number should be on a new line.",
-    expectedOutput: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+    title: "Gerade oder ungerade",
+    difficulty: "Easy" as const,
+    description: "Schreibe ein Programm, das den Benutzer nach einer Zahl fragt und ausgibt, ob sie gerade oder ungerade ist.",
+    expectedOutput: "Gib eine Zahl ein: 5\n5 ist ungerade.",
     hints: [
-      "Use a for loop with range()",
-      "range(1, 11) gives numbers from 1 to 10",
-      "Print each number in the loop"
-    ]
+      "Verwende den Modulo-Operator %",
+      "Gerade Zahlen haben Rest 0 bei Division durch 2",
+      "Nutze if ... else"
+    ],
+    topic: "Bedingungen (if-else)" as const
   },
   {
     id: 5,
-    title: "List Operations",
+    title: "Notensystem",
     difficulty: "Medium" as const,
-    description: "Create a list of your favorite fruits, add a new fruit to the list, and print the total number of fruits and the entire list.",
-    expectedOutput: "Fruits: ['apple', 'banana', 'orange', 'grape']\nTotal fruits: 4",
+    description: "Schreibe ein Programm, das eine Punktzahl (0–100) abfragt und eine Note ausgibt:\n\n90–100 = Sehr gut\n70–89 = Gut\n50–69 = Ausreichend\nUnter 50 = Durchgefallen",
+    expectedOutput: "Gib deine Punktzahl ein: 72\nNote: Gut",
     hints: [
-      "Create a list using square brackets []",
-      "Use append() to add items to a list",
-      "Use len() to get the length of a list"
-    ]
+      "Verwende if, elif, else",
+      "Vergleiche Zahlenbereiche mit >= und <=",
+      "Teste das Programm mit verschiedenen Werten"
+    ],
+    topic: "Bedingungen (if-else)" as const
   },
   {
     id: 6,
-    title: "Grade Calculator",
+    title: "Einfaches Login",
     difficulty: "Hard" as const,
-    description: "Write a program that calculates the average of test scores and assigns a letter grade. Take 3 test scores as input and determine if the average is A (90+), B (80-89), C (70-79), D (60-69), or F (below 60).",
-    expectedOutput: "Enter score 1: 85\nEnter score 2: 92\nEnter score 3: 78\nAverage: 85.0\nGrade: B",
+    description: "Schreibe ein Programm, das den Benutzer nach Benutzername und Passwort fragt. Nur wenn beide Werte korrekt sind, soll Zugang erlaubt erscheinen, sonst Zugang verweigert.",
+    expectedOutput: "Benutzername: admin\nPasswort: 1234\nZugang erlaubt",
     hints: [
-      "Calculate average by adding scores and dividing by 3",
-      "Use multiple if-elif-else statements",
-      "Use >= and < operators for comparisons"
-    ]
+      "Speichere Benutzername und Passwort in Variablen",
+      "Vergleiche Eingabe mit den gespeicherten Werten",
+      "Nutze eine kombinierte Bedingung mit and"
+    ],
+    topic: "Bedingungen (if-else)" as const
+  },
+
+  // Thema: Schleifen
+  {
+    id: 7,
+    title: "Zähle bis 10",
+    difficulty: "Easy" as const,
+    description: "Schreibe ein Programm, das die Zahlen von 1 bis 10 mit einer Schleife ausgibt.",
+    expectedOutput: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+    hints: [
+      "Verwende eine for-Schleife mit range()",
+      "range(1, 11) gibt Zahlen von 1 bis 10 zurück"
+    ],
+    topic: "Schleifen" as const
+  },
+  {
+    id: 8,
+    title: "Summe berechnen",
+    difficulty: "Medium" as const,
+    description: "Schreibe ein Programm, das den Benutzer nach einer Zahl n fragt und die Summe von 1 bis n berechnet.",
+    expectedOutput: "Gib eine Zahl ein: 5\nDie Summe ist 15",
+    hints: [
+      "Verwende eine Schleife mit range(1, n+1)",
+      "Summiere die Zahlen in einer Variablen summe",
+      "Alternativ kannst du die Formel n*(n+1)//2 nutzen"
+    ],
+    topic: "Schleifen" as const
+  },
+  {
+    id: 9,
+    title: "Zahlenraten",
+    difficulty: "Hard" as const,
+    description: "Schreibe ein Programm, bei dem der Computer eine Zahl zwischen 1 und 20 wählt. Der Benutzer hat 5 Versuche, sie zu erraten. Nach jedem Versuch wird ausgegeben, ob die Zahl zu hoch oder zu niedrig war.",
+    expectedOutput: "Ich denke an eine Zahl zwischen 1 und 20.\nDein Tipp: 10\nZu niedrig.\nDein Tipp: 15\nZu hoch.\nDein Tipp: 12\nRichtig! Du hast es in 3 Versuchen geschafft.",
+    hints: [
+      "Verwende das Modul random (random.randint(1, 20))",
+      "Nutze eine while-Schleife für die Versuche",
+      "Zähle die Anzahl der Versuche mit einer Variablen"
+    ],
+    topic: "Schleifen" as const
   }
 ];
