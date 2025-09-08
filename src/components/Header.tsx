@@ -11,6 +11,7 @@ import {
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
+  const { theme, setTheme } = useTheme();
 
   return (
     <header className="bg-card border-b border-border shadow-sm">
