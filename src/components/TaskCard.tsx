@@ -2,11 +2,12 @@ import { useState } from "react";
 import { ChevronDown, ChevronRight, Code2, Target } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TaskCardProps {
   id: number;
   title: string;
-  difficulty: "Easy" | "Medium" | "Hard";
+  difficulty: string;
   description: string;
   expectedOutput: string;
   hints?: string[];
@@ -14,11 +15,15 @@ interface TaskCardProps {
 
 export function TaskCard({ id, title, difficulty, description, expectedOutput, hints }: TaskCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useLanguage();
 
   const difficultyColors = {
     Easy: "bg-success text-success-foreground",
-    Medium: "bg-warning text-warning-foreground", 
-    Hard: "bg-destructive text-destructive-foreground"
+    Einfach: "bg-success text-success-foreground",
+    Medium: "bg-warning text-warning-foreground",
+    Mittel: "bg-warning text-warning-foreground", 
+    Hard: "bg-destructive text-destructive-foreground",
+    Schwer: "bg-destructive text-destructive-foreground"
   };
 
   return (
@@ -44,7 +49,7 @@ export function TaskCard({ id, title, difficulty, description, expectedOutput, h
               <div className="flex items-center gap-2 mt-1">
                 <span className={cn(
                   "px-2 py-1 text-xs font-medium rounded-full",
-                  difficultyColors[difficulty]
+                  difficultyColors[difficulty as keyof typeof difficultyColors]
                 )}>
                   {difficulty}
                 </span>
@@ -62,9 +67,9 @@ export function TaskCard({ id, title, difficulty, description, expectedOutput, h
           <div>
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Code2 className="h-4 w-4" />
-              Description
+              {t('task.description')}
             </h4>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
               {description}
             </p>
           </div>
@@ -72,7 +77,7 @@ export function TaskCard({ id, title, difficulty, description, expectedOutput, h
           <div>
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Target className="h-4 w-4" />
-              Expected Output
+              {t('task.expectedOutput')}
             </h4>
             <div className="bg-code-bg text-code-foreground p-3 rounded-lg font-mono text-sm">
               <pre>{expectedOutput}</pre>
@@ -81,7 +86,7 @@ export function TaskCard({ id, title, difficulty, description, expectedOutput, h
 
           {hints && hints.length > 0 && (
             <div>
-              <h4 className="font-medium text-foreground mb-2">💡 Hints</h4>
+              <h4 className="font-medium text-foreground mb-2">{t('task.hints')}</h4>
               <ul className="space-y-1">
                 {hints.map((hint, index) => (
                   <li key={index} className="text-muted-foreground text-sm flex items-start gap-2">
