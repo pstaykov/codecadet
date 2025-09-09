@@ -31,7 +31,7 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="flex-1 overflow-y-auto space-y-6 pr-2 min-h-0">
+            <div className="flex-1 overflow-y-auto space-y-6 pr-2 min-h-0 modern-scrollbar">
               {topics.map((topic) => {
                 const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
                 return (
@@ -58,7 +58,7 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="flex-1 overflow-y-auto space-y-3 pr-2 min-h-0">
+            <div className="flex-1 overflow-y-auto space-y-3 pr-2 min-h-0 modern-scrollbar">
               {pythonHelp.map((help, index) => (
                 <HelpCard key={index} {...help} />
               ))}
