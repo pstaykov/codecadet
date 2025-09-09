@@ -120,7 +120,6 @@ export const pythonTasks = [
     ],
     topic: "Schleifen" as const
   },
-
   // Thema: Fortgeschritten / Hard (10 Aufgaben)
   {
     id: 10,
