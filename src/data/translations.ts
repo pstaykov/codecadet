@@ -40,7 +40,7 @@ export const taskTranslations = {
       ],
       topic: "Variables and Input" as const
     },
-    
+
     // Conditions (if-else)
     {
       id: 4,
@@ -120,129 +120,138 @@ export const taskTranslations = {
         "Count the number of attempts with a variable"
       ],
       topic: "Loops" as const
-    }
-  ],
-  de: [
-    // Variablen und Eingabe  
-    {
-      id: 1,
-      title: "Hallo Benutzer",
-      difficulty: "Einfach" as const,
-      description: "Schreibe ein Programm, das den Benutzer nach seinem Namen fragt und Hallo <Name> ausgibt.",
-      expectedOutput: "Wie heißt du? Anna\nHallo Anna",
-      hints: [
-        "Verwende die Funktion input()",
-        "Speichere die Eingabe in einer Variablen",
-        "Nutze print(), um Text und Variable auszugeben"
-      ],
-      topic: "Variablen und Eingabe" as const
-    },
-    {
-      id: 2,
-      title: "Name und Alter",
-      difficulty: "Mittel" as const,
-      description: "Schreibe ein Programm, das den Benutzer nach Name und Alter fragt und dann eine Nachricht wie Anna ist 20 Jahre alt. ausgibt.",
-      expectedOutput: "Wie heißt du? Anna\nWie alt bist du? 20\nAnna ist 20 Jahre alt.",
-      hints: [
-        "Verwende zwei Eingaben (name, alter)",
-        "input() gibt immer einen String zurück",
-        "Kombiniere die Variablen im print()"
-      ],
-      topic: "Variablen und Eingabe" as const
-    },
-    {
-      id: 3,
-      title: "100 Jahre alt",
-      difficulty: "Schwer" as const,
-      description: "Schreibe ein Programm, das den Benutzer nach Name und Alter fragt und berechnet, in welchem Jahr die Person 100 Jahre alt wird.",
-      expectedOutput: "Wie heißt du? Anna\nWie alt bist du? 20\nAnna wird im Jahr 2105 hundert Jahre alt.",
-      hints: [
-        "Wandle das Alter mit int() in eine Zahl um",
-        "Hole das aktuelle Jahr mit dem Modul datetime",
-        "Addiere (100 - alter) zum aktuellen Jahr"
-      ],
-      topic: "Variablen und Eingabe" as const
-    },
-    
-    // Bedingungen (if-else)
-    {
-      id: 4,
-      title: "Gerade oder ungerade",
-      difficulty: "Einfach" as const,
-      description: "Schreibe ein Programm, das den Benutzer nach einer Zahl fragt und ausgibt, ob sie gerade oder ungerade ist.",
-      expectedOutput: "Gib eine Zahl ein: 5\n5 ist ungerade.",
-      hints: [
-        "Verwende den Modulo-Operator %",
-        "Gerade Zahlen haben Rest 0 bei Division durch 2",
-        "Nutze if ... else"
-      ],
-      topic: "Bedingungen (if-else)" as const
-    },
-    {
-      id: 5,
-      title: "Notensystem",
-      difficulty: "Mittel" as const,
-      description: "Schreibe ein Programm, das eine Punktzahl (0–100) abfragt und eine Note ausgibt:\n\n90–100 = Sehr gut\n70–89 = Gut\n50–69 = Ausreichend\nUnter 50 = Durchgefallen",
-      expectedOutput: "Gib deine Punktzahl ein: 72\nNote: Gut",
-      hints: [
-        "Verwende if, elif, else",
-        "Vergleiche Zahlenbereiche mit >= und <=",
-        "Teste das Programm mit verschiedenen Werten"
-      ],
-      topic: "Bedingungen (if-else)" as const
-    },
-    {
-      id: 6,
-      title: "Einfaches Login",
-      difficulty: "Schwer" as const,
-      description: "Schreibe ein Programm, das den Benutzer nach Benutzername und Passwort fragt. Nur wenn beide Werte korrekt sind, soll Zugang erlaubt erscheinen, sonst Zugang verweigert.",
-      expectedOutput: "Benutzername: admin\nPasswort: 1234\nZugang erlaubt",
-      hints: [
-        "Speichere Benutzername und Passwort in Variablen",
-        "Vergleiche Eingabe mit den gespeicherten Werten",
-        "Nutze eine kombinierte Bedingung mit and"
-      ],
-      topic: "Bedingungen (if-else)" as const
     },
 
-    // Schleifen
+    // Advanced Hard Tasks
     {
-      id: 7,
-      title: "Zähle bis 10",
-      difficulty: "Einfach" as const,
-      description: "Schreibe ein Programm, das die Zahlen von 1 bis 10 mit einer Schleife ausgibt.",
-      expectedOutput: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+      id: 10,
+      title: "Extended Calculator",
+      difficulty: "Hard" as const,
+      description: "Write a calculator program that repeatedly asks for two numbers and an operator (+, -, *, /), prints the result, and ends only when q is entered. Handle division by 0 and invalid operators.",
+      expectedOutput: "Number 1: 10\nNumber 2: 5\nOperator: *\nResult: 50\n...\nOperator: q\nProgram ended.",
       hints: [
-        "Verwende eine for-Schleife mit range()",
-        "range(1, 11) gibt Zahlen von 1 bis 10 zurück"
+        "Use a while loop for the menu",
+        "Convert inputs with float()",
+        "Check for division by 0"
       ],
-      topic: "Schleifen" as const
+      topic: "Projects" as const
     },
     {
-      id: 8,
-      title: "Summe berechnen",
-      difficulty: "Mittel" as const,
-      description: "Schreibe ein Programm, das den Benutzer nach einer Zahl n fragt und die Summe von 1 bis n berechnet.",
-      expectedOutput: "Gib eine Zahl ein: 5\nDie Summe ist 15",
+      id: 11,
+      title: "Hangman",
+      difficulty: "Hard" as const,
+      description: "Implement a Hangman game: The computer chooses a word, the user guesses letters. Show the progress and count failed attempts.",
+      expectedOutput: "Word: _ _ _ _\nLetter: a\nProgress: _ a _ a\n...\nYou win!",
       hints: [
-        "Verwende eine Schleife mit range(1, n+1)",
-        "Summiere die Zahlen in einer Variablen summe",
-        "Alternativ kannst du die Formel n*(n+1)//2 nutzen"
+        "Use random.choice() for words",
+        "Use sets for correct/incorrect guesses",
+        "Build the display with a loop"
       ],
-      topic: "Schleifen" as const
+      topic: "Projects" as const
     },
     {
-      id: 9,
-      title: "Zahlenraten",
-      difficulty: "Schwer" as const,
-      description: "Schreibe ein Programm, bei dem der Computer eine Zahl zwischen 1 und 20 wählt. Der Benutzer hat 5 Versuche, sie zu erraten. Nach jedem Versuch wird ausgegeben, ob die Zahl zu hoch oder zu niedrig war.",
-      expectedOutput: "Ich denke an eine Zahl zwischen 1 und 20.\nDein Tipp: 10\nZu niedrig.\nDein Tipp: 15\nZu hoch.\nDein Tipp: 12\nRichtig! Du hast es in 3 Versuchen geschafft.",
+      id: 12,
+      title: "Password Checker",
+      difficulty: "Hard" as const,
+      description: "Write a password checker that validates: length ≥ 8, upper/lowercase letters, digits, special characters.",
+      expectedOutput: "Password: Abc12!\nMissing: length ≥ 8, special character\nStrength: weak",
       hints: [
-        "Verwende das Modul random (random.randint(1, 20))",
-        "Nutze eine while-Schleife für die Versuche",
-        "Zähle die Anzahl der Versuche mit einer Variablen"
+        "Use isupper(), islower(), isdigit()",
+        "Define a set of special characters",
+        "Count satisfied criteria"
       ],
-      topic: "Schleifen" as const
+      topic: "Strings & Conditions" as const
+    },
+    {
+      id: 13,
+      title: "Vocabulary Trainer",
+      difficulty: "Hard" as const,
+      description: "Build a vocabulary trainer with a dictionary: German → English. Ask random words, check answers, count score, quit with q.",
+      expectedOutput: "Translate: Hund\nInput: dog\nCorrect! Score: 1\nTranslate: q\nGame over. Final score: 1",
+      hints: [
+        "Use random.choice() on dictionary keys",
+        "Compare answers case-insensitive",
+        "Keep track of score"
+      ],
+      topic: "Dictionaries" as const
+    },
+    {
+      id: 14,
+      title: "Gradebook",
+      difficulty: "Hard" as const,
+      description: "Create a gradebook: student → list of grades. Compute average per student, and class min/max/average.",
+      expectedOutput: "Anna: avg 2.0\nBen: avg 3.0\nClass avg: 2.5",
+      hints: [
+        "Dictionary: name -> list",
+        "split(',') and float() for inputs",
+        "Use min(), max(), sum()/len()"
+      ],
+      topic: "Data Structures" as const
+    },
+    {
+      id: 15,
+      title: "To-Do Manager",
+      difficulty: "Hard" as const,
+      description: "Implement a simple To-Do manager: add <text>, list, done <index>, exit.",
+      expectedOutput: "Command: add Buy milk\nAdded: Buy milk\nCommand: list\n[0] Buy milk",
+      hints: [
+        "Parse input with split(maxsplit=1)",
+        "Store tasks in a list",
+        "Check index validity"
+      ],
+      topic: "Loops & Strings" as const
+    },
+    {
+      id: 16,
+      title: "Word Frequency",
+      difficulty: "Hard" as const,
+      description: "Read a text, remove punctuation, count words, output top 5.",
+      expectedOutput: "python – 3\nis – 2\n...",
+      hints: [
+        "Use translate() or replace() to remove punctuation",
+        "Dictionary: word -> count",
+        "Sort with sorted()"
+      ],
+      topic: "Strings & Dictionaries" as const
+    },
+    {
+      id: 17,
+      title: "ATM Simulation",
+      difficulty: "Hard" as const,
+      description: "Simulate an ATM with account number + PIN. Commands: balance, deposit, withdraw, logout.",
+      expectedOutput: "Balance: 250.00\nWithdraw 300 → declined\nDeposit 50 → Balance: 300.00",
+      hints: [
+        "dict[account] = {pin, balance}",
+        "Check PIN before commands",
+        "Format with f-strings"
+      ],
+      topic: "Dictionaries & Projects" as const
+    },
+    {
+      id: 18,
+      title: "Tic-Tac-Toe",
+      difficulty: "Hard" as const,
+      description: "Two players (X/O) play Tic-Tac-Toe in the terminal. Show the board after each move, check for winner.",
+      expectedOutput: "_ _ _\n_ X _\n_ _ _\nPlayer X wins!",
+      hints: [
+        "Board as list of lists",
+        "Switch players after each move",
+        "Check rows/cols/diagonals"
+      ],
+      topic: "Logic & Games" as const
+    },
+    {
+      id: 19,
+      title: "CSV Grade Parser",
+      difficulty: "Hard" as const,
+      description: "Read input like 'Anna,1;Ben,2;Cara,1;Ben,3'. Create dictionary: name → list[grades], compute averages.",
+      expectedOutput: "Anna: [1] avg 1.00\nBen: [2, 3] avg 2.50\nCara: [1] avg 1.00",
+      hints: [
+        "Split with ';' and ','",
+        "Use dict.setdefault() for lists",
+        "Average with sum()/len()"
+      ],
+      topic: "Strings & Dictionaries" as const
     }
   ]
 };
