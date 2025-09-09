@@ -246,3 +246,52 @@ export const taskTranslations = {
     }
   ]
 };
+
+export const translations = {
+  de: {
+    nav: {
+      tasks: 'Aufgaben',
+      reference: 'Referenz',
+      tasksCount: 'Aufgaben',
+      topicsCount: 'Themen',
+      swipe: 'Wischen →',
+    },
+    topic: {
+      prefix: 'Thema:'
+    },
+    task: {
+      description: 'Beschreibung',
+      expectedOutput: 'Erwartete Ausgabe',
+      hints: 'Hinweise'
+    },
+    help: {
+      description: 'Beschreibung',
+      syntax: 'Syntax',
+      example: 'Beispiel',
+      examples: 'Beispiele'
+    }
+  },
+  en: {
+    nav: {
+      tasks: 'Tasks',
+      reference: 'Reference',
+      tasksCount: 'tasks',
+      topicsCount: 'topics',
+      swipe: 'Swipe →',
+    },
+    topic: {
+      prefix: 'Topic:'
+    },
+    task: {
+      description: 'Description',
+      expectedOutput: 'Expected Output',
+      hints: 'Hints'
+    },
+    help: {
+      description: 'Description',
+      syntax: 'Syntax',
+      example: 'Example',
+      examples: 'Examples'
+    }
+  }
+};

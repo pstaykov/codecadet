@@ -4,68 +4,152 @@ import { Header } from "@/components/Header";
 import { pythonHelp } from "@/data/pythonHelp";
 import { taskTranslations } from "@/data/translations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Book, Zap } from "lucide-react";
+import { Code2, Book, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 
 const Index = () => {
   const { language, t } = useLanguage();
   const currentTasks = taskTranslations[language];
+  const [isMobile, setIsMobile] = useState(false);
   
   const topics = language === 'de' 
     ? ["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen"]
     : ["Variables and Input", "Conditions (if-else)", "Loops"];
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
     
   return (
     <div className="min-h-screen bg-gradient-subtle">
       <Header />
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-6">
-        <div className="grid lg:grid-cols-2 gap-6 h-[calc(100vh-200px)]">
-          {/* Tasks Section */}
-          <div className="flex flex-col h-full min-h-0">
-            <div className="flex items-center gap-2 mb-4 flex-shrink-0">
-              <Code2 className="h-5 w-5 text-primary" />
-              <h2 className="text-xl font-semibold text-foreground">{t('nav.tasks')}</h2>
-              <span className="px-2 py-1 bg-primary text-primary-foreground text-xs rounded-full">
-                {currentTasks.length} {t('nav.tasksCount')}
-              </span>
-            </div>
-            
-            <div className="flex-1 overflow-y-auto space-y-6 pr-2 min-h-0 modern-scrollbar">
-              {topics.map((topic) => {
-                const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
-                return (
-                  <div key={topic} className="space-y-3">
-                    <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
-                      {t('topic.prefix')} {topic}
-                    </h3>
-                    {tasksForTopic.map((task) => (
-                      <TaskCard key={task.id} {...task} />
+      {/* Mobile Layout - Swipeable Gallery */}
+      {isMobile ? (
+        <div className="container mx-auto px-4 py-6">
+          <Carousel className="w-full max-w-full">
+            <CarouselContent className="-ml-0">
+              {/* Tasks Page */}
+              <CarouselItem className="pl-0">
+                <div className="flex flex-col h-[calc(100vh-200px)]">
+                  <div className="flex items-center gap-2 mb-4 flex-shrink-0">
+                    <Code2 className="h-5 w-5 text-primary" />
+                    <h2 className="text-xl font-semibold text-foreground">{t('nav.tasks')}</h2>
+                    <span className="px-2 py-1 bg-primary text-primary-foreground text-xs rounded-full">
+                      {currentTasks.length} {t('nav.tasksCount')}
+                    </span>
+                    <div className="ml-auto flex items-center gap-1 text-xs text-muted-foreground">
+                      <span>{t('nav.swipe')}</span>
+                      <ChevronRight className="h-3 w-3" />
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 overflow-y-auto space-y-6 modern-scrollbar">
+                    {topics.map((topic) => {
+                      const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
+                      return (
+                        <div key={topic} className="space-y-3">
+                          <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
+                            {t('topic.prefix')} {topic}
+                          </h3>
+                          {tasksForTopic.map((task) => (
+                            <TaskCard key={task.id} {...task} />
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </CarouselItem>
+
+              {/* References Page */}
+              <CarouselItem className="pl-0">
+                <div className="flex flex-col h-[calc(100vh-200px)]">
+                  <div className="flex items-center gap-2 mb-4 flex-shrink-0">
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <ChevronLeft className="h-3 w-3" />
+                      <span>{t('nav.swipe')}</span>
+                    </div>
+                    <Book className="h-5 w-5 text-accent ml-auto" />
+                    <h2 className="text-xl font-semibold text-foreground">{t('nav.reference')}</h2>
+                    <span className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded-full">
+                      {pythonHelp.length} {t('nav.topicsCount')}
+                    </span>
+                  </div>
+                  
+                  <div className="flex-1 overflow-y-auto space-y-3 modern-scrollbar">
+                    {pythonHelp.map((help, index) => (
+                      <HelpCard key={index} {...help} />
                     ))}
                   </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Help Section */}
-          <div className="flex flex-col h-full min-h-0">
-            <div className="flex items-center gap-2 mb-4 flex-shrink-0">
-              <Book className="h-5 w-5 text-accent" />
-              <h2 className="text-xl font-semibold text-foreground">{t('nav.reference')}</h2>
-              <span className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded-full">
-                {pythonHelp.length} {t('nav.topicsCount')}
-              </span>
-            </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
             
-            <div className="flex-1 overflow-y-auto space-y-3 pr-2 min-h-0 modern-scrollbar">
-              {pythonHelp.map((help, index) => (
-                <HelpCard key={index} {...help} />
-              ))}
+            {/* Navigation dots */}
+            <div className="flex justify-center mt-4 gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary opacity-60"></div>
+              <div className="w-2 h-2 rounded-full bg-muted-foreground opacity-30"></div>
+            </div>
+          </Carousel>
+        </div>
+      ) : (
+        /* Desktop Layout - Side by Side */
+        <div className="container mx-auto px-4 py-6">
+          <div className="grid lg:grid-cols-2 gap-6 h-[calc(100vh-200px)]">
+            {/* Tasks Section */}
+            <div className="flex flex-col h-full min-h-0">
+              <div className="flex items-center gap-2 mb-4 flex-shrink-0">
+                <Code2 className="h-5 w-5 text-primary" />
+                <h2 className="text-xl font-semibold text-foreground">{t('nav.tasks')}</h2>
+                <span className="px-2 py-1 bg-primary text-primary-foreground text-xs rounded-full">
+                  {currentTasks.length} {t('nav.tasksCount')}
+                </span>
+              </div>
+              
+              <div className="flex-1 overflow-y-auto space-y-6 pr-2 min-h-0 modern-scrollbar">
+                {topics.map((topic) => {
+                  const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
+                  return (
+                    <div key={topic} className="space-y-3">
+                      <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
+                        {t('topic.prefix')} {topic}
+                      </h3>
+                      {tasksForTopic.map((task) => (
+                        <TaskCard key={task.id} {...task} />
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Help Section */}
+            <div className="flex flex-col h-full min-h-0">
+              <div className="flex items-center gap-2 mb-4 flex-shrink-0">
+                <Book className="h-5 w-5 text-accent" />
+                <h2 className="text-xl font-semibold text-foreground">{t('nav.reference')}</h2>
+                <span className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded-full">
+                  {pythonHelp.length} {t('nav.topicsCount')}
+                </span>
+              </div>
+              
+              <div className="flex-1 overflow-y-auto space-y-3 pr-2 min-h-0 modern-scrollbar">
+                {pythonHelp.map((help, index) => (
+                  <HelpCard key={index} {...help} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-4">

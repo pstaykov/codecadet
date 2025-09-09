@@ -21,6 +21,7 @@ const translations = {
     'nav.reference': 'Python Reference',
     'nav.tasksCount': 'Tasks',
     'nav.topicsCount': 'Topics',
+    'nav.swipe': 'Swipe →',
     
     // Topics
     'topic.variables': 'Variables and Input',
@@ -57,6 +58,7 @@ const translations = {
     'nav.reference': 'Python Referenz',
     'nav.tasksCount': 'Aufgaben',
     'nav.topicsCount': 'Themen',
+    'nav.swipe': 'Wischen →',
     
     // Topics
     'topic.variables': 'Variablen und Eingabe',
