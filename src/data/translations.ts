@@ -257,7 +257,7 @@ export const taskTranslations = {
 };
 
 export const translations = {
-  de: {
+  de: [
     nav: {
       tasks: 'Aufgaben',
       reference: 'Referenz',
@@ -279,8 +279,8 @@ export const translations = {
       example: 'Beispiel',
       examples: 'Beispiele'
     }
-  },
-  en: {
+  ],
+  en: [
     nav: {
       tasks: 'Tasks',
       reference: 'Reference',
@@ -302,5 +302,5 @@ export const translations = {
       example: 'Example',
       examples: 'Examples'
     }
-  }
+  ]
 };
