@@ -19,10 +19,10 @@ const Index = () => {
       <Header />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6">
-        <div className="grid lg:grid-cols-2 gap-6 h-[calc(100vh-140px)]">
+      <div className="container mx-auto px-4 py-6 h-[calc(100vh-140px)]">
+        <div className="grid lg:grid-cols-2 gap-6 h-full">
           {/* Tasks Section */}
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full min-h-0">
             <div className="flex items-center gap-2 mb-4 flex-shrink-0">
               <Code2 className="h-5 w-5 text-primary" />
               <h2 className="text-xl font-semibold text-foreground">{t('nav.tasks')}</h2>
@@ -31,7 +31,7 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="flex-1 overflow-y-auto space-y-6 pr-2 scrollbar-thin">
+            <div className="flex-1 overflow-y-auto space-y-6 pr-2 min-h-0">
               {topics.map((topic) => {
                 const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
                 return (
@@ -49,7 +49,7 @@ const Index = () => {
           </div>
 
           {/* Help Section */}
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full min-h-0">
             <div className="flex items-center gap-2 mb-4 flex-shrink-0">
               <Book className="h-5 w-5 text-accent" />
               <h2 className="text-xl font-semibold text-foreground">{t('nav.reference')}</h2>
@@ -58,7 +58,7 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin">
+            <div className="flex-1 overflow-y-auto space-y-3 pr-2 min-h-0">
               {pythonHelp.map((help, index) => (
                 <HelpCard key={index} {...help} />
               ))}
