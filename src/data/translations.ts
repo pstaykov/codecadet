@@ -118,6 +118,138 @@ export const taskTranslations = {
         "Zähle die Anzahl der Versuche mit einer Variablen"
       ],
       topic: "Schleifen" as const
+    },
+
+    // Advanced Hard Tasks
+    {
+      id: 10,
+      title: "Erweiterter Taschenrechner",
+      difficulty: "Hard" as const,
+      description: "Schreibe ein Taschenrechner-Programm, das wiederholt nach zwei Zahlen und einem Operator (+, -, *, /) fragt, das Ergebnis ausgibt und nur bei Eingabe von q beendet wird. Behandle Division durch 0 und ungültige Operatoren.",
+      expectedOutput: "Zahl 1: 10\nZahl 2: 5\nOperator: *\nErgebnis: 50\n...\nOperator: q\nProgramm beendet.",
+      hints: [
+        "Verwende eine while-Schleife für das Menü",
+        "Konvertiere Eingaben mit float()",
+        "Überprüfe Division durch 0"
+      ],
+      topic: "Projekte" as const
+    },
+    {
+      id: 11,
+      title: "Galgenmännchen",
+      difficulty: "Hard" as const,
+      description: "Implementiere ein Galgenmännchen-Spiel: Der Computer wählt ein Wort, der Benutzer rät Buchstaben. Zeige den Fortschritt und zähle fehlgeschlagene Versuche.",
+      expectedOutput: "Wort: _ _ _ _\nBuchstabe: a\nFortschritt: _ a _ a\n...\nDu gewinnst!",
+      hints: [
+        "Verwende random.choice() für Wörter",
+        "Nutze Sets für richtige/falsche Vermutungen",
+        "Baue die Anzeige mit einer Schleife"
+      ],
+      topic: "Projekte" as const
+    },
+    {
+      id: 12,
+      title: "Passwort-Prüfer",
+      difficulty: "Hard" as const,
+      description: "Schreibe einen Passwort-Prüfer, der validiert: Länge ≥ 8, Groß-/Kleinbuchstaben, Ziffern, Sonderzeichen.",
+      expectedOutput: "Passwort: Abc12!\nFehlt: Länge ≥ 8, Sonderzeichen\nStärke: schwach",
+      hints: [
+        "Verwende isupper(), islower(), isdigit()",
+        "Definiere ein Set von Sonderzeichen",
+        "Zähle erfüllte Kriterien"
+      ],
+      topic: "Strings & Bedingungen" as const
+    },
+    {
+      id: 13,
+      title: "Vokabeltrainer",
+      difficulty: "Hard" as const,
+      description: "Baue einen Vokabeltrainer mit einem Wörterbuch: Deutsch → Englisch. Frage zufällige Wörter ab, prüfe Antworten, zähle Punkte, beende mit q.",
+      expectedOutput: "Übersetze: Hund\nEingabe: dog\nRichtig! Punkte: 1\nÜbersetze: q\nSpiel beendet. Endpunktzahl: 1",
+      hints: [
+        "Verwende random.choice() auf Dictionary-Schlüssel",
+        "Vergleiche Antworten ohne Beachtung der Groß-/Kleinschreibung",
+        "Führe Punktestand"
+      ],
+      topic: "Dictionaries" as const
+    },
+    {
+      id: 14,
+      title: "Notenbuch",
+      difficulty: "Hard" as const,
+      description: "Erstelle ein Notenbuch: Schüler → Liste von Noten. Berechne Durchschnitt pro Schüler und Klassen-Min/Max/Durchschnitt.",
+      expectedOutput: "Anna: Durchschnitt 2.0\nBen: Durchschnitt 3.0\nKlassendurchschnitt: 2.5",
+      hints: [
+        "Dictionary: Name -> Liste",
+        "split(',') und float() für Eingaben",
+        "Verwende min(), max(), sum()/len()"
+      ],
+      topic: "Datenstrukturen" as const
+    },
+    {
+      id: 15,
+      title: "To-Do Manager",
+      difficulty: "Hard" as const,
+      description: "Implementiere einen einfachen To-Do-Manager: add <text>, list, done <index>, exit.",
+      expectedOutput: "Befehl: add Milch kaufen\nHinzugefügt: Milch kaufen\nBefehl: list\n[0] Milch kaufen",
+      hints: [
+        "Parse Eingabe mit split(maxsplit=1)",
+        "Speichere Aufgaben in einer Liste",
+        "Überprüfe Index-Gültigkeit"
+      ],
+      topic: "Schleifen & Strings" as const
+    },
+    {
+      id: 16,
+      title: "Worthäufigkeit",
+      difficulty: "Hard" as const,
+      description: "Lies einen Text, entferne Satzzeichen, zähle Wörter, gib Top 5 aus.",
+      expectedOutput: "python – 3\nist – 2\n...",
+      hints: [
+        "Verwende translate() oder replace() zum Entfernen von Satzzeichen",
+        "Dictionary: Wort -> Anzahl",
+        "Sortiere mit sorted()"
+      ],
+      topic: "Strings & Dictionaries" as const
+    },
+    {
+      id: 17,
+      title: "Geldautomat-Simulation",
+      difficulty: "Hard" as const,
+      description: "Simuliere einen Geldautomaten mit Kontonummer + PIN. Befehle: balance, deposit, withdraw, logout.",
+      expectedOutput: "Kontostand: 250.00\nAbheben 300 → abgelehnt\nEinzahlen 50 → Kontostand: 300.00",
+      hints: [
+        "dict[konto] = {pin, kontostand}",
+        "Überprüfe PIN vor Befehlen",
+        "Formatiere mit f-Strings"
+      ],
+      topic: "Dictionaries & Projekte" as const
+    },
+    {
+      id: 18,
+      title: "Tic-Tac-Toe",
+      difficulty: "Hard" as const,
+      description: "Zwei Spieler (X/O) spielen Tic-Tac-Toe im Terminal. Zeige das Brett nach jedem Zug, prüfe auf Gewinner.",
+      expectedOutput: "_ _ _\n_ X _\n_ _ _\nSpieler X gewinnt!",
+      hints: [
+        "Brett als Liste von Listen",
+        "Wechsle Spieler nach jedem Zug",
+        "Prüfe Reihen/Spalten/Diagonalen"
+      ],
+      topic: "Logik & Spiele" as const
+    },
+    {
+      id: 19,
+      title: "CSV Noten-Parser",
+      difficulty: "Hard" as const,
+      description: "Lies Eingabe wie 'Anna,1;Ben,2;Cara,1;Ben,3'. Erstelle Dictionary: Name → Liste[Noten], berechne Durchschnitte.",
+      expectedOutput: "Anna: [1] Durchschnitt 1.00\nBen: [2, 3] Durchschnitt 2.50\nCara: [1] Durchschnitt 1.00",
+      hints: [
+        "Teile mit ';' und ','",
+        "Verwende dict.setdefault() für Listen",
+        "Durchschnitt mit sum()/len()"
+      ],
+      topic: "Strings & Dictionaries" as const
     }
   ],
   en: [
