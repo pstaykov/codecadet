@@ -14,8 +14,8 @@ const Index = () => {
   const [isMobile, setIsMobile] = useState(false);
   
   const topics = language === 'de' 
-    ? ["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen"]
-    : ["Variables and Input", "Conditions (if-else)", "Loops"];
+    ? ["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen", "Projekte", "Strings & Bedingungen", "Dictionaries", "Datenstrukturen", "Schleifen & Strings", "Strings & Dictionaries", "Dictionaries & Projekte", "Logik & Spiele"]
+    : ["Variables and Input", "Conditions (if-else)", "Loops", "Projects", "Strings & Conditions", "Dictionaries", "Data Structures", "Loops & Strings", "Strings & Dictionaries", "Dictionaries & Projects", "Logic & Games"];
 
   useEffect(() => {
     const checkMobile = () => {
@@ -52,9 +52,10 @@ const Index = () => {
                   </div>
                   
                   <div className="flex-1 overflow-y-auto space-y-6 modern-scrollbar">
-                    {topics.map((topic) => {
-                      const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
-                      return (
+                     {topics.map((topic) => {
+                       const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
+                       if (tasksForTopic.length === 0) return null;
+                       return (
                         <div key={topic} className="space-y-3">
                           <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
                             {t('topic.prefix')} {topic}
@@ -115,9 +116,10 @@ const Index = () => {
               </div>
               
               <div className="flex-1 overflow-y-auto space-y-6 pr-2 min-h-0 modern-scrollbar">
-                {topics.map((topic) => {
-                  const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
-                  return (
+                 {topics.map((topic) => {
+                   const tasksForTopic = currentTasks.filter((task) => task.topic === topic);
+                   if (tasksForTopic.length === 0) return null;
+                   return (
                     <div key={topic} className="space-y-3">
                       <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">
                         {t('topic.prefix')} {topic}
