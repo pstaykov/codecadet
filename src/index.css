@@ -189,13 +189,13 @@ All colors MUST be HSL.
     font-family: 'Courier New', monospace;
     font-size: 1.25rem;
     color: hsl(var(--primary));
-    opacity: 0.08;
+    opacity: 0.15;
     animation: scroll-right 30s linear infinite;
   }
 
   .dark .code-row {
     color: hsl(var(--primary));
-    opacity: 0.12;
+    opacity: 0.2;
   }
 
   @keyframes scroll-right {

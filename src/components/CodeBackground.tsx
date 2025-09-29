@@ -22,12 +22,12 @@ export const CodeBackground = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Create multiple rows of scrolling code
-    const rows = 4;
+    // Create multiple rows of scrolling code - more rows, closer together
+    const rows = 8;
     for (let i = 0; i < rows; i++) {
       const row = document.createElement('div');
       row.className = 'code-row';
-      row.style.top = `${i * 25}%`;
+      row.style.top = `${i * 12.5}%`;
       row.style.animationDelay = `${i * -2}s`;
       
       // Duplicate code lines for seamless scrolling
