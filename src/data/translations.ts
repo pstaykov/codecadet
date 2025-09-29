@@ -511,11 +511,6 @@ export const taskTranslations = {
 
 export const translations = {
   de: {
-    hero: {
-      title: 'Willkommen bei Code Cadet',
-      description: 'Wir sind die Python-Interessen­gemeinschaft am Otto-Nagel-Gymnasium. Unser Ziel: gemeinsam die Grundlagen der Programmierung lernen – nicht mit Blöcken, sondern mit echtem Code. Auf dieser Website findest du Präsentationen, Aufgaben und eine Befehls-Referenz, mit denen du im eigenen Tempo üben kannst. Jeder kann mitmachen – Vorkenntnisse sind nicht nötig!',
-      cta: 'Zur Anmeldung'
-    },
     nav: {
       tasks: 'Aufgaben',
       reference: 'Referenz',
@@ -539,11 +534,6 @@ export const translations = {
     }
   },
   en: {
-    hero: {
-      title: 'Welcome to Code Cadet',
-      description: 'We are the Python interest group at Otto-Nagel-Gymnasium. Our goal: to learn the basics of programming together – not with blocks, but with real code. On this website you will find presentations, exercises, and a command reference to practice at your own pace. Everyone can join – no prior knowledge required!',
-      cta: 'Sign up'
-    },
     nav: {
       tasks: 'Tasks',
       reference: 'Reference',

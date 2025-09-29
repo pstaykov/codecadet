@@ -1,10 +1,11 @@
 import { TaskCard } from "@/components/TaskCard";
 import { HelpCard } from "@/components/HelpCard";
 import { Header } from "@/components/Header";
+import { CodeBackground } from "@/components/CodeBackground";
 import { pythonHelp } from "@/data/pythonHelp";
 import { taskTranslations } from "@/data/translations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink, Sparkles } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
@@ -33,28 +34,45 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto text-center space-y-6 bg-card rounded-2xl p-8 shadow-[var(--shadow-card)] border border-border">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            {t('hero.title')}
-          </h1>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            {t('hero.description')}
-          </p>
-          <Button 
-            size="lg"
-            className="mt-4 gap-2"
-            asChild
-          >
-            <a 
-              href="https://forms.gle/9f4jVZ1m4RdzSkFd8" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              {t('hero.cta')}
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </Button>
+      <section className="container mx-auto px-4 py-16">
+        <div className="relative max-w-5xl mx-auto overflow-hidden rounded-3xl border border-border bg-card/50 backdrop-blur-sm">
+          {/* Animated Code Background */}
+          <CodeBackground />
+          
+          {/* Content */}
+          <div className="relative z-10 text-center space-y-6 px-6 py-16 md:px-12 md:py-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Python Learning Platform</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              <span className="bg-gradient-primary bg-clip-text text-transparent animate-fade-in">
+                {t('hero.title')}
+              </span>
+            </h1>
+            
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              {t('hero.description')}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <Button 
+                size="lg"
+                className="gap-2 shadow-[var(--shadow-elevated)] hover:scale-105 transition-transform"
+                asChild
+              >
+                <a 
+                  href="https://forms.gle/9f4jVZ1m4RdzSkFd8" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {t('hero.cta')}
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
