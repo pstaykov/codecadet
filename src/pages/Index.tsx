@@ -4,8 +4,9 @@ import { Header } from "@/components/Header";
 import { pythonHelp } from "@/data/pythonHelp";
 import { taskTranslations } from "@/data/translations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Book, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -30,6 +31,32 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-subtle">
       <Header />
+
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto text-center space-y-6 bg-card rounded-2xl p-8 shadow-[var(--shadow-card)] border border-border">
+          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            {t('hero.title')}
+          </h1>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            {t('hero.description')}
+          </p>
+          <Button 
+            size="lg"
+            className="mt-4 gap-2"
+            asChild
+          >
+            <a 
+              href="https://forms.gle/9f4jVZ1m4RdzSkFd8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              {t('hero.cta')}
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </section>
 
       {/* Mobile Layout - Swipeable Gallery */}
       {isMobile ? (
