@@ -203,7 +203,7 @@ export const taskTranslations = {
       id: 16,
       title: "Worthäufigkeit",
       difficulty: "Hard" as const,
-      description: "Lies einen Text, entferne Satzzeichen, zähle Wörter, gib Top 5 aus.",
+      description: "Lies einen Text, entferne Satzzeichen, zähle Wörter, gib Top 5 aus.\n\nHilfreiche Referenz: https://www.w3schools.com/python/python_strings_methods.asp",
       expectedOutput: "python – 3\nist – 2\n...",
       hints: [
         "Verwende translate() oder replace() zum Entfernen von Satzzeichen",
@@ -458,7 +458,7 @@ export const taskTranslations = {
       id: 16,
       title: "Word Frequency",
       difficulty: "Hard" as const,
-      description: "Read a text, remove punctuation, count words, output top 5.",
+      description: "Read a text, remove punctuation, count words, output top 5.\n\nHelpful reference: https://www.w3schools.com/python/python_strings_methods.asp",
       expectedOutput: "python – 3\nis – 2\n...",
       hints: [
         "Use translate() or replace() to remove punctuation",
