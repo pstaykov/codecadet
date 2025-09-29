@@ -23,7 +23,7 @@ export const CodeBackground = () => {
     if (!container) return;
 
     // Create multiple rows of scrolling code - more rows, closer together
-    const rows = 30;
+    const rows = 300;
     for (let i = 0; i < rows; i++) {
       const row = document.createElement('div');
       row.className = 'code-row';
