@@ -28,6 +28,10 @@ export const CodeBackground = () => {
       const row = document.createElement('div');
       row.className = 'code-row';
       row.style.top = `${i * 12.5}%`;
+      
+      // Vary animation duration for different speeds (20s to 40s)
+      const duration = 20 + (i % 5) * 5;
+      row.style.animationDuration = `${duration}s`;
       row.style.animationDelay = `${i * -2}s`;
       
       // Duplicate code lines for seamless scrolling
