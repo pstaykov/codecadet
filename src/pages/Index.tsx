@@ -34,29 +34,29 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="relative max-w-5xl mx-auto overflow-hidden rounded-3xl border border-border bg-card/50 backdrop-blur-sm">
-          {/* Animated Code Background */}
-          <CodeBackground />
-          
-          {/* Content */}
-          <div className="relative z-10 text-center space-y-6 px-6 py-16 md:px-12 md:py-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+      <section className="relative overflow-hidden py-20 md:py-32">
+        {/* Animated Code Background */}
+        <CodeBackground />
+        
+        {/* Content */}
+        <div className="container mx-auto px-4">
+          <div className="relative z-10 text-center space-y-6 max-w-5xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 animate-fade-in">
               <Sparkles className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium text-primary">Python Learning Platform</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              <span className="bg-gradient-primary bg-clip-text text-transparent animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight animate-fade-in animate-scale-in" style={{ animationDelay: '0.1s' }}>
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
                 {t('hero.title')}
               </span>
             </h1>
             
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               {t('hero.description')}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button 
                 size="lg"
                 className="gap-2 shadow-[var(--shadow-elevated)] hover:scale-105 transition-transform"
