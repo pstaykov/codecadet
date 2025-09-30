@@ -46,7 +46,7 @@ const Index = () => {
               <span className="text-sm font-medium text-primary">Python Learning Platform</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight animate-fade-in animate-scale-in" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight animate-enter" style={{ animationDelay: '0.1s' }}>
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 {t('hero.title')}
               </span>
