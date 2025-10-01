@@ -2,7 +2,7 @@
 
 Willkommen im Repository der **CodeCadet-IG am Otto-Nagel-Gymnasium**!  
 Wir treffen uns regelmäßig, um gemeinsam die Grundlagen in Python zu lernen und auszuprobieren.  
-Dieses Repository enthält Präsentationen und die [Website](https://codecadet.lovable.app/).
+Dieses Repository enthält die [Website](https://codecadet.lovable.app/).
 
 ---
 
