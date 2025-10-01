@@ -14,7 +14,7 @@ const translations = {
   en: {
     // Hero
     'hero.title': 'Welcome to Code Cadet',
-    'hero.description': 'We are the Python interest group at Otto-Nagel-Gymnasium. Our goal: to learn the basics of programming together – not with blocks, but with real code. On this website you will find presentations, exercises, and a command reference to practice at your own pace. Everyone can join – no prior knowledge required!',
+    'hero.description': 'We are the Python interest group at Otto-Nagel-Gymnasium. Our goal: to learn the basics of programming together – not with blocks, but with real code. On this website you will find exercises, and a command reference to practice at your own pace. Everyone can join – no prior knowledge required!',
     'hero.cta': 'Sign up',
     
     // Header
@@ -56,7 +56,7 @@ const translations = {
   de: {
     // Hero
     'hero.title': 'Willkommen bei Code Cadet',
-    'hero.description': 'Wir sind die Python-Interessengemeinschaft am Otto-Nagel-Gymnasium. Unser Ziel: gemeinsam die Grundlagen der Programmierung lernen – nicht mit Blöcken, sondern mit echtem Code. Auf dieser Website findest du Präsentationen, Aufgaben und eine Befehls-Referenz, mit denen du im eigenen Tempo üben kannst. Jeder kann mitmachen – Vorkenntnisse sind nicht nötig!',
+    'hero.description': 'Wir sind die Python-Interessengemeinschaft am Otto-Nagel-Gymnasium. Unser Ziel: gemeinsam die Grundlagen der Programmierung lernen – nicht mit Blöcken, sondern mit echtem Code. Auf dieser Website findest du Aufgaben und eine Befehls-Referenz, mit denen du im eigenen Tempo üben kannst. Jeder kann mitmachen – Vorkenntnisse sind nicht nötig!',
     'hero.cta': 'Zur Anmeldung',
     
     // Header  
