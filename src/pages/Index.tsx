@@ -17,6 +17,7 @@ const Index = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   
   const topics = language === 'de' 
     ? ["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen", "Projekte", "Strings & Bedingungen", "Dictionaries", "Datenstrukturen", "Schleifen & Strings", "Strings & Dictionaries", "Dictionaries & Projekte", "Logik & Spiele"]
@@ -43,6 +44,15 @@ const Index = () => {
     };
   }, [isFullscreen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const filteredHelp = pythonHelp.filter((help) => {
     const query = searchQuery.toLowerCase();
     return (
@@ -55,7 +65,8 @@ const Index = () => {
     
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      {!isFullscreen && <Header />}
+      {!isFullscreen && <Header isScrolled={isScrolled} />}
+      {!isFullscreen && <div className="h-[88px]" />} {/* Spacer for fixed header */}
 
       {/* Hero Section */}
       {!isFullscreen && (
