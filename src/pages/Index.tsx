@@ -5,15 +5,17 @@ import { CodeBackground } from "@/components/CodeBackground";
 import { pythonHelp } from "@/data/pythonHelp";
 import { taskTranslations } from "@/data/translations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink, Sparkles } from "lucide-react";
+import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink, Sparkles, Search } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 
 const Index = () => {
   const { language, t } = useLanguage();
   const currentTasks = taskTranslations[language];
   const [isMobile, setIsMobile] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   
   const topics = language === 'de' 
     ? ["Variablen und Eingabe", "Bedingungen (if-else)", "Schleifen", "Projekte", "Strings & Bedingungen", "Dictionaries", "Datenstrukturen", "Schleifen & Strings", "Strings & Dictionaries", "Dictionaries & Projekte", "Logik & Spiele"]
@@ -28,6 +30,16 @@ const Index = () => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  const filteredHelp = pythonHelp.filter((help) => {
+    const query = searchQuery.toLowerCase();
+    return (
+      help.title.toLowerCase().includes(query) ||
+      help.description.toLowerCase().includes(query) ||
+      help.syntax.toLowerCase().includes(query) ||
+      help.example.toLowerCase().includes(query)
+    );
+  });
     
   return (
     <div className="min-h-screen bg-gradient-subtle">
@@ -126,14 +138,30 @@ const Index = () => {
                     <Book className="h-5 w-5 text-accent ml-auto" />
                     <h2 className="text-xl font-semibold text-foreground">{t('nav.reference')}</h2>
                     <span className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded-full">
-                      {pythonHelp.length} {t('nav.topicsCount')}
+                      {filteredHelp.length} {t('nav.topicsCount')}
                     </span>
+                  </div>
+
+                  <div className="relative mb-3 flex-shrink-0">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      placeholder={language === 'de' ? 'Befehl suchen...' : 'Search command...'}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="pl-9"
+                    />
                   </div>
                   
                   <div className="flex-1 overflow-y-auto space-y-3 modern-scrollbar">
-                    {pythonHelp.map((help, index) => (
-                      <HelpCard key={index} {...help} />
-                    ))}
+                    {filteredHelp.length > 0 ? (
+                      filteredHelp.map((help, index) => (
+                        <HelpCard key={index} {...help} />
+                      ))
+                    ) : (
+                      <div className="text-center py-8 text-muted-foreground">
+                        {language === 'de' ? 'Keine Befehle gefunden' : 'No commands found'}
+                      </div>
+                    )}
                   </div>
                 </div>
               </CarouselItem>
@@ -184,14 +212,30 @@ const Index = () => {
                 <Book className="h-5 w-5 text-accent" />
                 <h2 className="text-xl font-semibold text-foreground">{t('nav.reference')}</h2>
                 <span className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded-full">
-                  {pythonHelp.length} {t('nav.topicsCount')}
+                  {filteredHelp.length} {t('nav.topicsCount')}
                 </span>
+              </div>
+
+              <div className="relative mb-3 flex-shrink-0">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder={language === 'de' ? 'Befehl suchen...' : 'Search command...'}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-9"
+                />
               </div>
               
               <div className="flex-1 overflow-y-auto space-y-3 pr-2 min-h-0 modern-scrollbar">
-                {pythonHelp.map((help, index) => (
-                  <HelpCard key={index} {...help} />
-                ))}
+                {filteredHelp.length > 0 ? (
+                  filteredHelp.map((help, index) => (
+                    <HelpCard key={index} {...help} />
+                  ))
+                ) : (
+                  <div className="text-center py-8 text-muted-foreground">
+                    {language === 'de' ? 'Keine Befehle gefunden' : 'No commands found'}
+                  </div>
+                )}
               </div>
             </div>
           </div>
