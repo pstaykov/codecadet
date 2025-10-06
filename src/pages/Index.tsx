@@ -66,7 +66,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-subtle">
       {!isFullscreen && <Header isScrolled={isScrolled} />}
-      {!isFullscreen && <div className="h-[88px]" />} {/* Spacer for fixed header */}
+      {!isFullscreen && <div className={`transition-all duration-300 ${isScrolled ? 'h-[72px]' : 'h-[88px]'}`} />} {/* Spacer for fixed header */}
 
       {/* Hero Section */}
       {!isFullscreen && (

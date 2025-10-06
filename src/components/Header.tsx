@@ -14,8 +14,8 @@ export function Header({ isScrolled = false }: { isScrolled?: boolean }) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <header className={`fixed top-0 left-0 right-0 bg-card border-b border-border shadow-sm transition-all duration-300 z-40 origin-top ${isScrolled ? 'scale-y-[0.85]' : ''}`}>
-      <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? 'py-3' : 'py-6'}`}>
+    <header className="fixed top-0 left-0 right-0 bg-card border-b border-border shadow-sm transition-all duration-300 z-40">
+      <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-6'}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-gradient-primary rounded-lg">
