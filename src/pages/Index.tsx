@@ -125,7 +125,7 @@ const Index = () => {
 
       {/* Mobile Layout - Swipeable Gallery */}
       {isMobile ? (
-        <div className={`container mx-auto ${isFullscreen ? 'px-6 py-6' : 'px-4 py-6'}`}>
+        <div className={`container mx-auto ${isFullscreen ? 'px-8 py-8' : 'px-4 py-6'}`}>
           <Carousel className="w-full max-w-full">
             <CarouselContent className="-ml-0">
               {/* Tasks Page */}
@@ -211,7 +211,7 @@ const Index = () => {
         </div>
       ) : (
         /* Desktop Layout - Side by Side */
-        <div className={`container mx-auto ${isFullscreen ? 'px-6 py-6' : 'px-4 py-6'}`}>
+        <div className={`container mx-auto ${isFullscreen ? 'px-8 py-8' : 'px-4 py-6'}`}>
           <div className={`grid lg:grid-cols-2 gap-6 ${isFullscreen ? 'h-screen' : 'h-[calc(100vh-200px)]'}`}>
             {/* Tasks Section */}
             <div className="flex flex-col h-full min-h-0">
