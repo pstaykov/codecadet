@@ -51,7 +51,14 @@ const translations = {
     'category.controlFlow': 'Control Flow',
     'category.dataTypes': 'Data Types',
     'category.functions': 'Functions',
-    'category.advanced': 'Advanced'
+    'category.advanced': 'Advanced',
+    
+    // Info Section
+    'info.title': 'General Info',
+    'info.location': '2.OG MEB',
+    'info.time': 'Tuesday in the A-Week, 4th period',
+    'info.requirements': 'Just bring your laptop & curiosity – no prior knowledge needed',
+    'info.leads': 'Peter Staykov & Mika Bartholomäus'
   },
   de: {
     // Hero
@@ -93,7 +100,14 @@ const translations = {
     'category.controlFlow': 'Kontrollstrukturen',
     'category.dataTypes': 'Datentypen',
     'category.functions': 'Funktionen',
-    'category.advanced': 'Erweitert'
+    'category.advanced': 'Erweitert',
+    
+    // Info Section
+    'info.title': 'Allgemeine Infos',
+    'info.location': 'Informatikraum am Otto-Nagel-Gymnasium',
+    'info.time': 'Dienstag A-Woche 4. Block',
+    'info.requirements': 'Nur Laptop & Interesse – keine Vorkenntnisse nötig',
+    'info.leads': 'Peter Staykov & Mika Bartholomäus'
   }
 };
 
