@@ -531,6 +531,18 @@ export const translations = {
       syntax: 'Syntax',
       example: 'Beispiel',
       examples: 'Beispiele'
+    },
+    hero: {
+      title: 'Lerne Python auf moderne Weise',
+      description: 'Entdecke Python mit praktischen Aufgaben und interaktiven Tutorials. Von grundlegenden Konzepten bis hin zu fortgeschrittenen Projekten – alles an einem Ort.',
+      cta: '👨‍💻 Feedback geben'
+    },
+    info: {
+      title: 'Allgemeine Infos',
+      location: 'Informatikraum am Otto-Nagel-Gymnasium',
+      time: 'Dienstag A-Woche 4. Block',
+      requirements: 'Nur Laptop & Interesse – keine Vorkenntnisse nötig',
+      leads: 'Peter Staykov & Mika Bartholomäus'
     }
   },
   en: {
@@ -554,6 +566,18 @@ export const translations = {
       syntax: 'Syntax',
       example: 'Example',
       examples: 'Examples'
+    },
+    hero: {
+      title: 'Learn Python the Modern Way',
+      description: 'Discover Python through practical exercises and interactive tutorials. From basic concepts to advanced projects – all in one place.',
+      cta: '👨‍💻 Give Feedback'
+    },
+    info: {
+      title: 'General Info',
+      location: '2.OG MEB',
+      time: 'Tuesday in the A-Week, 4th period',
+      requirements: 'Just bring your laptop & curiosity – no prior knowledge needed',
+      leads: 'Peter Staykov & Mika Bartholomäus'
     }
   }
 };

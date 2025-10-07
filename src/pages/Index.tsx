@@ -5,7 +5,7 @@ import { CodeBackground } from "@/components/CodeBackground";
 import { pythonHelp } from "@/data/pythonHelp";
 import { taskTranslations } from "@/data/translations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink, Sparkles, Search, Maximize2, Minimize2 } from "lucide-react";
+import { Code2, Book, Zap, ChevronLeft, ChevronRight, ExternalLink, Sparkles, Search, Maximize2, Minimize2, MapPin, Clock, Laptop, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -107,6 +107,61 @@ const Index = () => {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Info Section */}
+      {!isFullscreen && (
+        <section className="py-16 bg-card/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
+                {t('info.title')}
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{language === 'de' ? 'Ort' : 'Location'}</h3>
+                    <p className="text-sm text-muted-foreground">{t('info.location')}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Clock className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{language === 'de' ? 'Zeit' : 'Time'}</h3>
+                    <p className="text-sm text-muted-foreground">{t('info.time')}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Laptop className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{language === 'de' ? 'Voraussetzungen' : 'Requirements'}</h3>
+                    <p className="text-sm text-muted-foreground">{t('info.requirements')}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{language === 'de' ? 'Leitung' : 'Leads'}</h3>
+                    <p className="text-sm text-muted-foreground">{t('info.leads')}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
