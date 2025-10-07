@@ -123,7 +123,7 @@ const Index = () => {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
@@ -133,7 +133,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Clock className="h-5 w-5 text-primary" />
                   </div>
@@ -143,7 +143,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Laptop className="h-5 w-5 text-primary" />
                   </div>
@@ -153,7 +153,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4 p-6 rounded-lg bg-card border border-border hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Users className="h-5 w-5 text-primary" />
                   </div>
